@@ -1,0 +1,6 @@
+
+>>> sum_num = __import__('myDocTest').sum
+
+>>> sum_num(2, 3)
+5
+

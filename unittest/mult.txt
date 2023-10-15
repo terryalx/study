@@ -1,0 +1,11 @@
+Import File:
+
+	>>> multNum = __import__('mult').mult
+
+Test case1:
+
+	>>> multNum(3, 3)
+	9
+	>>> multNum(2, 1)
+	2
+

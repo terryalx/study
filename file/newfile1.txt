@@ -1,0 +1,1 @@
+This is a script to write text to a file. 
