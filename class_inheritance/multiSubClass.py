@@ -27,42 +27,25 @@ class Child(FatherAtt, MotherAtt):
         return self.full_name()
 
 child1 = Child("Oshendi", "Musigu", "Nosa")
-
 print(child1.full_name())
 # set all children to inherit father's and mother's name from the base class
 
-"""
-class A:
-        def __init__(self, n='Rahul'):
-                self.name = n
+class grandchildren(FatherAtt, MotherAtt):
+    def __init__(self, myName, fatherName, motherName):
+        self.myName = myName
+        FatherAtt.__init__(self, fatherName)  # Call the constructor of FatherAtt
+        MotherAtt.__init__(self, motherName)  # Call the constructor of MotherAtt
 
-class B(A):
-        def __init__(self, roll):
-                self.roll = roll
+    def __str__(self):
+        return f"Full Names: father: {self.fatherName} | myName: {self.myName}"
 
-object = B(23)
-print(object.name)
-"""
+gc = grandchildren('Femi', 'Ben', 'Tumi')
+print(gc)
+print(gc.motherName) 
+print(gc.fatherName) 
+print(gc.myName)
 
-class Person(object):
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
 
-    def display(self):
-        print(self.name, self.age)
 
-class Student(Person):
-    def __init__(self, name, age):
-        self.sName = name
-        self.sAge = age
-        # inheriting the properties of parent class
-        super().__init__("Rahul", age)
 
-    def displayInfo(self):
-        print(self.sName, self.sAge)
-
-obj = Student("Mayank", 23)
-obj.display()
-obj.displayInfo()
 
